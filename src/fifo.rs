@@ -1,8 +1,8 @@
-use std::fs::OpenOptions;
+use std::fs::{File, OpenOptions};
 use std::io::Read;
 
 pub fn read_fifo_twelve_bytes(path: &String) -> std::io::Result<u16> {
-    let mut fifo_file = OpenOptions::new().read(true).open(path)?;
+    let mut fifo_file: File = OpenOptions::new().read(true).open(path)?;
 
     // The buffer is size 6 because we mimic the standard
     // If you change the standard change this
