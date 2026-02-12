@@ -41,7 +41,8 @@ In contrast ttyS31 would likely only be in use if all other ports were in use or
 * Start the intiface server
 * Scan for devices
 
-You can verify if this worked by using the vibrate bar under your device
+You can verify if this worked by using the vibrate bar under your device\
+If you stop the tty.sh while the intiface server is running it will crash. Stop intiface first.
 
 ## Caveats
 This is ultimately not a proper solution. I do not understand how to get websockets working, and that would be the proper way to do something like this. That would remove the need for root, the ttyS, and make the only thing you need being rust. If you care to you can fork this and replace the fifo code with websocket. From what I found on the Inficace docs the code snippet for websockets is underdeveloped connection with code. In its current form its most suitable for controlling devices. This may just me being dumb.
