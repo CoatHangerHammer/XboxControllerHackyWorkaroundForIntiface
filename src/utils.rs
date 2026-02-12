@@ -13,7 +13,7 @@ pub fn get_device() -> evdev::Device {
     let mut devices = evdev::enumerate().map(|t| t.1).collect::<Vec<_>>();
     devices.reverse();
     let choice;
-    if devices.len() == 0 {
+    if devices.len() == 1 {
         choice = 0;
     }
     else {
